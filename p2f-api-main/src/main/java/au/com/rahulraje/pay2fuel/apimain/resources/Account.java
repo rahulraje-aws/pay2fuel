@@ -1,7 +1,7 @@
 /**
  * 
  */
-package au.com.rahulraje.pay2fuel.resources;
+package au.com.rahulraje.pay2fuel.apimain.resources;
 
 /**
  * @author rahul

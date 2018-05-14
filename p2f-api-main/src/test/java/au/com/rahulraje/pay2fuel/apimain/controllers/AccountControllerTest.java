@@ -1,4 +1,4 @@
-package au.com.rahulraje.pay2fuel.controllers;
+package au.com.rahulraje.pay2fuel.apimain.controllers;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -11,6 +11,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+
+import au.com.rahulraje.pay2fuel.apimain.controllers.AccountController;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(AccountController.class)

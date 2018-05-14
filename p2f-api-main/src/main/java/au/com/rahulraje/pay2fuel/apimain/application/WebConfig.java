@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package au.com.rahulraje.pay2fuel.application;
+package au.com.rahulraje.pay2fuel.apimain.application;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -31,7 +31,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  *
  */
 @EnableWebMvc
-@ComponentScan(basePackages="au.com.rahulraje.pay2fuel")
+@ComponentScan(basePackages="au.com.rahulraje.pay2fuel.apimain")
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 

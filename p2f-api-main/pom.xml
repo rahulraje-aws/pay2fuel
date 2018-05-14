@@ -16,6 +16,7 @@
 
 	<groupId>au.com.rahulraje.pay2fuel</groupId>
 	<artifactId>p2f-api-main</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<description>An example which demonstrates the use of the Camel CXF component</description>
 	<parent>
@@ -86,5 +87,4 @@
 			</dependencies>
 		</profile>
 	</profiles>
-	<version>0.0.1-SNAPSHOT</version>
 </project>
