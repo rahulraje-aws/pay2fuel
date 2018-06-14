@@ -13,6 +13,11 @@ security:
       user-info-uri: http://localhost:8080/me
 
 logging:
+  file: logs/app.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d : %msg%n"
   level:
-    org.springframework.security: DEBUG
     org.springframework.web: DEBUG
+    guru.springframework.controllers: DEBUG
+    org.springframework.security: DEBUG
