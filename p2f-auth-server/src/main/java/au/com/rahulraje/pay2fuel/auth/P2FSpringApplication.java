@@ -34,6 +34,7 @@ import org.springframework.security.oauth2.client.filter.OAuth2ClientContextFilt
 import org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeResourceDetails;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
+import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootConfiguration
 @ComponentScan(basePackages="au.com.rahulraje.pay2fuel.auth")
@@ -41,6 +42,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @EnableAutoConfiguration
 @EnableOAuth2Client
 @EnableAuthorizationServer
+@RestController
 @Order(200)
 public class P2FSpringApplication extends SpringBootServletInitializer {
 

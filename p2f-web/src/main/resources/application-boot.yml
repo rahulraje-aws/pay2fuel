@@ -1,0 +1,23 @@
+server:
+  port: @server.port@
+
+    
+security:
+  oauth2:
+    client:
+      client-id: acme
+      client-secret: acmesecret
+      access-token-uri: @access.token.url@/oauth/token
+      user-authorization-uri: @access.token.url@/oauth/authorize
+    resource:
+      user-info-uri: @access.token.url@/me
+
+logging:
+  file: logs/app.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d : %msg%n"
+  level:
+    org.springframework.web: DEBUG
+    guru.springframework.controllers: DEBUG
+    org.springframework.security: DEBUG
