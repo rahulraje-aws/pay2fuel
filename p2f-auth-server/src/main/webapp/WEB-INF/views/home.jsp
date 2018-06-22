@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,20 +10,19 @@
 <title>Demo</title>
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width" />
-<base href="/" />
-<link rel="stylesheet" type="text/css"
-    href="/webjars/bootstrap/3.2.0/css/bootstrap.min.css" />
-<script type="text/javascript" src="/webjars/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="/webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="${contextPath}/webjars/bootstrap/3.2.0/css/bootstrap.min.css" />
+<script type="text/javascript" src="${contextPath}/webjars/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="${contextPath}/webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${contextPath}/webjars/js-cookie/2.1.0/js.cookie.js"></script>
 </head>
 <body>
     <h1>Login</h1>
     <div class="container unauthenticated">
         <div>
-            With Facebook: <a href="/login/facebook">click here</a>
+            With Facebook: <a href="${contextPath}/login/facebook">click here</a>
         </div>
         <div>
-            With Github: <a href="/login/github">click here</a>
+            With Github: <a href="${contextPath}/login/github">click here</a>
         </div>
     </div>
     <div class="container authenticated" style="display: none">
@@ -29,7 +31,6 @@
             <button onClick="logout()" class="btn btn-primary">Logout</button>
         </div>
     </div>
-    <script type="text/javascript" src="/webjars/js-cookie/2.1.0/js.cookie.js"></script>
     <script type="text/javascript">
           $.ajaxSetup({
             beforeSend : function(xhr, settings) {
@@ -44,13 +45,13 @@
               }
             }
           });
-          $.get("/user", function(data) {
+          $.get("${contextPath}/user", function(data) {
             $("#user").html(data.userAuthentication.details.name);
             $(".unauthenticated").hide();
             $(".authenticated").show();
           });
           var logout = function() {
-            $.post("/logout", function() {
+            $.post("${contextPath}/logout", function() {
               $("#user").html('');
               $(".unauthenticated").show();
               $(".authenticated").hide();
