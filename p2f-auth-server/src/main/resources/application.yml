@@ -19,7 +19,7 @@ facebook:
     userInfoUri: https://graph.facebook.com/me
 
 logging:
-  file: logs/app.log
+  file: logs/p2f-auth.log
   pattern:
     console: "%d %-5level %logger : %msg%n"
     file: "%d : %msg%n"

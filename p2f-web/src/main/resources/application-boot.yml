@@ -1,6 +1,7 @@
 server:
   port: @server.port@
-
+  servlet:
+    context-path: /client
     
 security:
   oauth2:
@@ -11,13 +12,3 @@ security:
       user-authorization-uri: @access.token.url@/oauth/authorize
     resource:
       user-info-uri: @access.token.url@/me
-
-logging:
-  file: logs/app.log
-  pattern:
-    console: "%d %-5level %logger : %msg%n"
-    file: "%d : %msg%n"
-  level:
-    org.springframework.web: DEBUG
-    guru.springframework.controllers: DEBUG
-    org.springframework.security: DEBUG

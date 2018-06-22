@@ -32,28 +32,26 @@
 			<id>boot</id>
 			<properties>
 				<env>boot</env>
+				<spring.profiles.active>default,boot</spring.profiles.active>
 			</properties>
 		</profile>
 		<profile>
 			<id>dev</id>
 			<properties>
 				<env>dev</env>
+				<spring.profiles.active>default,dev</spring.profiles.active>
 			</properties>
-			<build>
-				<finalName>ROOT</finalName>
-			</build>
 		</profile>
 		<profile>
 			<id>test</id>
 			<properties>
 				<env>test</env>
+				<spring.profiles.active>default,test</spring.profiles.active>
 			</properties>
-			<build>
-				<finalName>${project.artifactId}</finalName>
-			</build>
 		</profile>
 	</profiles>
 	<build>
+		<finalName>${project.artifactId}</finalName>
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
@@ -161,14 +159,12 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
-			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>
 		<!-- Test -->
 		<dependency>
