@@ -1,9 +1,0 @@
-security:
-  oauth2:
-    client:
-      client-id: acme
-      client-secret: acmesecret
-      access-token-uri: @access.token.url@/oauth/token
-      user-authorization-uri: @access.token.url@/oauth/authorize  
-    resource:
-      user-info-uri: @access.token.url@/me
