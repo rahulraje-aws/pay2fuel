@@ -7,6 +7,8 @@ security:
       access-token-uri: @access.token.url@/oauth/token
       user-authorization-uri: @access.token.url@/oauth/authorize
       registered-redirect-uri:  @web.redirect.url@/login
+      pre-established-redirect-uri: @web.redirect.url@/login
+      use-current-uri: false
         
     resource:
       user-info-uri: @access.token.url@/me
