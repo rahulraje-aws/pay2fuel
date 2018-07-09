@@ -6,6 +6,8 @@ security:
       client-secret: acmesecret
       access-token-uri: @access.token.url@/oauth/token
       user-authorization-uri: @access.token.url@/oauth/authorize
+      registered-redirect-uri:  @web.redirect.url@/login
+        
     resource:
       user-info-uri: @access.token.url@/me
 
