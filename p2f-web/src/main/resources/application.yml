@@ -1,4 +1,6 @@
-    
+server:
+  use-forward-headers: true
+ 
 security:
   oauth2:
     client:
