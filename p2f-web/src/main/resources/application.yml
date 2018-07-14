@@ -18,7 +18,7 @@ security:
 logging:
   file: logs/p2f-web.log
   pattern:
-    console: "%d %-5level %logger : %msg%n"
+    console: "%d : %msg%n"
     file: "%d : %msg%n"
   level:
     org.springframework.web: DEBUG
