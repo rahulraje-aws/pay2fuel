@@ -1,5 +1,8 @@
 server:
   use-forward-headers: true
+  tomcat:
+    protocol-header: x-forwarded-proto
+    remote-ip-header: x-forwarded-for
  
 security:
   oauth2:
