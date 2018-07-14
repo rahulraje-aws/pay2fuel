@@ -24,7 +24,7 @@ facebook:
 logging:
   file: logs/p2f-auth.log
   pattern:
-    console: "%d %-5level %logger : %msg%n"
+    console: "%-5p %c{1.} %logger [%t]: %m%n"
     file: "%d : %msg%n"
   level:
     org.springframework.web: DEBUG
