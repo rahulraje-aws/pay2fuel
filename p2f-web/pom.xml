@@ -28,7 +28,7 @@
 				<configuration>
 					<webResources>
 						<resource>
-							<directory>.ebextensions</directory>
+							<directory>aws</directory>
 						</resource>
 					</webResources>
 				</configuration>
