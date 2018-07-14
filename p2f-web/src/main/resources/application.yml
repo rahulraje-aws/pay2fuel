@@ -18,7 +18,7 @@ security:
 logging:
   file: logs/p2f-web.log
   pattern:
-    console: "%-5p %c{1.} %logger [%t]: %m%n"
+    console: "%-1p %c{1.} : %m%n"
     file: "%d : %msg%n"
   level:
     org.springframework.web: DEBUG
