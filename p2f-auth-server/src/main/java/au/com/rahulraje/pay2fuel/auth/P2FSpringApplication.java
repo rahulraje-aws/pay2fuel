@@ -34,6 +34,8 @@ import org.springframework.security.oauth2.client.filter.OAuth2ClientContextFilt
 import org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeResourceDetails;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootConfiguration
@@ -58,6 +60,12 @@ public class P2FSpringApplication extends SpringBootServletInitializer {
 		SpringApplication.run(P2FSpringApplication.class, args);
 	}
 
+
+	@RequestMapping(value="/status", method=RequestMethod.GET)
+    public Message statusMessage() {
+        return new Message("OK");
+    }
+	
 	@Bean
 	public FilterRegistrationBean<OAuth2ClientContextFilter> oauth2ClientFilterRegistration(OAuth2ClientContextFilter filter) {
 		final FilterRegistrationBean<OAuth2ClientContextFilter> registration = new FilterRegistrationBean<OAuth2ClientContextFilter>();
@@ -72,6 +80,20 @@ public class P2FSpringApplication extends SpringBootServletInitializer {
 		return new ClientResources();
 	}
 
+
+	public static class Message {
+		 
+	    String status;
+	 
+	    public Message(String status) {
+	        this.status = status;
+	    }
+	 
+	    public String getStatus() {
+	        return status;
+	    }
+	 
+	}
 }
 
 class ClientResources {

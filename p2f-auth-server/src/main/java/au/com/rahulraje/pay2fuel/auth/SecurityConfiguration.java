@@ -60,7 +60,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		// @formatter:off
 		http.antMatcher("/**")
-		.authorizeRequests().antMatchers("/", "/login**", "/webjars/**","/favicon.ico").permitAll()
+		.authorizeRequests().antMatchers("/", "/status**", "/login**", "/webjars/**","/favicon.ico").permitAll()
 		.anyRequest().authenticated()
 		.and().exceptionHandling().authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/"))
 		.and().logout().logoutSuccessUrl("/").permitAll()
