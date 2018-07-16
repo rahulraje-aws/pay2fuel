@@ -8,6 +8,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
@@ -27,4 +29,25 @@ public class P2fWebApplication extends SpringBootServletInitializer {
 	public static void main(String[] args) {
 		SpringApplication.run(P2fWebApplication.class, args);
 	}
+
+	@RequestMapping(value="/status", method=RequestMethod.GET)
+    public Message statusMessage() {
+        return new Message("OK");
+    }
+
+	public static class Message {
+		 
+	    String status;
+	 
+	    public Message(String status) {
+	        this.status = status;
+	    }
+	 
+	    public String getStatus() {
+	        return status;
+	    }
+	 
+	}
 }
+
+
