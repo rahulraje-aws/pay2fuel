@@ -68,7 +68,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		.and().addFilterBefore(ssoFilter(), BasicAuthenticationFilter.class);
 		// @formatter:on
 		http.requiresChannel().anyRequest().requiresSecure();
-		http.requiresChannel().anyRequest().requiresInsecure();
 	}
 
 	@Configuration

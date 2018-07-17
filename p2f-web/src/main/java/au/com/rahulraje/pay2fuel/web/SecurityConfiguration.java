@@ -33,7 +33,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.and().logout().logoutSuccessUrl("/").permitAll();
 		// @formatter:on
 		http.requiresChannel().anyRequest().requiresSecure();
-		http.requiresChannel().anyRequest().requiresInsecure();
 	}
 
 }
