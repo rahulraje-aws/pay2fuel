@@ -28,11 +28,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		// @formatter:off
 		http.antMatcher("/**").authorizeRequests()
-			.antMatchers("/", "/status**", "/login**", "/webjars/**","/favicon.ico").permitAll()
+			.antMatchers("/", "/status", "/login**", "/webjars/**","/favicon.ico").permitAll()
 			.anyRequest().authenticated()
 			.and().logout().logoutSuccessUrl("/").permitAll();
 		// @formatter:on
-		http.requiresChannel().anyRequest().requiresSecure();
+		//http.requiresChannel().anyRequest().requiresSecure();
 	}
 
 }

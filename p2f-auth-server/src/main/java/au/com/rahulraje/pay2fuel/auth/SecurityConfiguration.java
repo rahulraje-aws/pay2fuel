@@ -59,15 +59,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		// @formatter:off
-		http.antMatcher("/**")
-		.authorizeRequests().antMatchers("/", "/status**", "/login**", "/webjars/**","/favicon.ico").permitAll()
+		http.antMatcher("/**").authorizeRequests()
+		.antMatchers("/", "/status", "/login**", "/webjars/**","/favicon.ico").permitAll()
 		.anyRequest().authenticated()
 		.and().exceptionHandling().authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/"))
 		.and().logout().logoutSuccessUrl("/").permitAll()
 		.and().csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
 		.and().addFilterBefore(ssoFilter(), BasicAuthenticationFilter.class);
 		// @formatter:on
-		http.requiresChannel().anyRequest().requiresSecure();
+		//http.requiresChannel().anyRequest().requiresSecure();
 	}
 
 	@Configuration
